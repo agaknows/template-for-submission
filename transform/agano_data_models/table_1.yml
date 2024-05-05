@@ -12,5 +12,4 @@ models:
         description: "The date of order submission in YYYY-MM-DD format"
       - name: successful_orders
         description: "The number of successful orders per day"
-    
-
+  
