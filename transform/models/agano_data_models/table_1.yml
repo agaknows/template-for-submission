@@ -6,7 +6,7 @@ models:
     description: "Total successful orders per day"
     database: foodpanda-422109
     schema: cs_1_2
-    materialized: view
+    materialized: table
     columns:
       - name: date_local
         description: "The date of order submission in YYYY-MM-DD format"
