@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: table_3
+    description: "Total successful orders per restaurant per day"
+    database: foodpanda-422109
+    schema: cs_1_2
+    materialized: table
+    columns:
+      - name: vendor_name
+        description: name of vendor based on vendor table
+      - name: date_local
+        description: date field
+      - name: order_count
+        description: Total successful orders per restaurant per day

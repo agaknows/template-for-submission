@@ -1,0 +1,11 @@
+models:
+  - name: trial
+    description: "A starter dbt model"
+    database: bigquery/tables/datawarehouse
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
