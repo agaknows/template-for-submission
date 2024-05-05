@@ -1,0 +1,11 @@
+models:
+  - name: q1
+    description: >
+      Answer to Q1 of take home test
+    meta:
+      owner: candidate@foodpanda.com
+    columns:
+      - country_name
+        description: Name of country.
+      - total_gmv
+        description: GMV calculated for each country.
