@@ -1,0 +1,16 @@
+version: 2
+
+
+models:
+  - name: table_1
+    description: "Total successful orders per day"
+    database: foodpanda-422109
+    schema: cs_1_2
+    materialized: table
+    columns:
+      - name: date_local
+        description: "The date of order submission in YYYY-MM-DD format"
+      - name: successful_orders
+        description: "The number of successful orders per day"
+    
+
