@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: table_2
+    description: "No of customers who have placed at least 1 successful order"
+    database: foodpanda-422109
+    schema: cs_1_2
+    materialized: table
+    columns:
+      - name: customer_count
+        description: "No of customers who have placed at least 1 successful order"
