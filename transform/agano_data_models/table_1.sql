@@ -1,5 +1,8 @@
-{{ config(materialized="table") }}
-
+{{
+    config(
+        materialized='table'
+    )
+}}
 
 with
     ord_1 as (
