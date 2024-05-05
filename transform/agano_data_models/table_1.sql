@@ -4,6 +4,7 @@
     )
 }}
 
+-- this CTE assumes that each row in the orders dataset corresponds to one transaction. the added field 'order_index' acts as an id for each transaction.
 with
     ord_1 as (
         select
@@ -20,6 +21,7 @@ with
         from `foodpanda-422109.cs_1_2.orders`
     ),
 
+    -- this CTE separates the product_ids listed in each cell of the product_id column, and creates a separate row for each. This allows us to connect the orders table to the products table.
     ord_2 as (
         select
             order_index,
@@ -35,6 +37,8 @@ with
         from ord_1, unnest(split(product_id, ',')) as product_id
     ),
 
+    
+    -- this CTE counts the quantity of products ordered in each transaction
     ord_3 as (
         select *, count(*) as product_quantity
         from ord_2
@@ -51,6 +55,7 @@ with
             product_id
     ),
 
+    -- this table joins ALL of the given tables into one
     final_table as (
         select *
         from ord_3 o
@@ -60,6 +65,7 @@ with
         left join `foodpanda-422109.cs_1_2.customers` c on c.id = o.customer_id
     ),
 
+    -- counts the number of orders that meet the criteria of is_succesful_order =true
     successful_orders_per_day as (
         select date_local, count(distinct order_index) as successful_orders
         from final_table
