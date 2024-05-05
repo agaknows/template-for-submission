@@ -5,7 +5,7 @@ models:
     description: "Total successful orders per restaurant per day"
     database: foodpanda-422109
     schema: cs_1_2
-    materialized: view
+    materialized: table
     columns:
       - name: vendor_name
         description: name of vendor based on vendor table
