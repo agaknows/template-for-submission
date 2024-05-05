@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+
 -- This CTE assumes that each row in the orders dataset corresponds to one transaction. The added field order_index acts as an id for each transaction.
 with ord_1 as (
     SELECT 
