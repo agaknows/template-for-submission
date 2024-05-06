@@ -66,7 +66,7 @@ final_table as (
     LEFT JOIN `foodpanda-422109.cs_1_2.customers` c ON c.id = o.customer_id
 )
 
--- Average number of products ordered per day
+-- Average number of products ordered per day. Per day, the number of products for each transaction is summed and divided by the number of unique product ids.
 SELECT date_local, (SUM(product_quantity) / COUNT(DISTINCT order_index)) as avg_no_of_products
 FROM final_table
 GROUP BY date_local
